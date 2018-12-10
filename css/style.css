@@ -472,6 +472,82 @@ body, html {
 .ba-col-1 {
   width: 8.3333%; }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
 body {
   font: 400 16px/1.6 "Raleway", san-serif;
   color: #333333; }
@@ -566,6 +642,9 @@ select {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+  @media screen and (max-width: 768px) {
+    .ba-crewman {
+      display: block; } }
   .ba-crewman__col-img {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
@@ -575,7 +654,11 @@ select {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    overflow: hidden; }
+    @media screen and (max-width: 768px) {
+      .ba-crewman__col-img {
+        padding: 20px; } }
     .ba-crewman__col-img img {
       border: 1px solid #ffcc00;
       display: block;
@@ -603,6 +686,12 @@ select {
     text-align: center;
     border-left: 1px solid #ffcc00;
     position: relative; }
+    @media (max-width: 768px) {
+      .ba-crewman__col-info {
+        border-left: none;
+        padding: 30px;
+        margin-top: 30px;
+        border-top: 1px solid #ffcc00; } }
   .ba-crewman__name {
     color: #666;
     font: 900 36px/1.5 "Roboto", san-serif;
@@ -676,5 +765,56 @@ select {
   padding: 4px 14px; }
   .ba-button:hover {
     background-color: #ffcc00; }
+
+.ba-team-slider {
+  position: relative; }
+
+.slick-prev,
+.slick-next {
+  width: 30px;
+  height: 30px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+  position: absolute;
+  z-index: 2;
+  font-size: 0; }
+
+.slick-prev {
+  background: url(../img/arLeft.png) no-repeat 50%;
+  background-size: cover;
+  position: absolute;
+  bottom: 50%;
+  left: -10px; }
+
+.slick-next {
+  background: url(../img/arRight.png) no-repeat 50%;
+  background-size: cover;
+  bottom: 50%;
+  right: -10px; }
+
+.slick-dots {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-right: 38px; }
+  .slick-dots li + li {
+    margin-left: 10px; }
+  .slick-dots button {
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #ffcc00;
+    background: #fff; }
+
+.slick-active button {
+  border: 1px solid #ffcc00;
+  background: #ffcc00; }
 
 /*# sourceMappingURL=style.css.map */
